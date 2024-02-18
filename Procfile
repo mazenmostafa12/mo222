@@ -1,1 +1,1 @@
-worker: python bot2031.py
+worker: python bot logo.py
