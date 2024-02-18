@@ -1,24 +1,10 @@
 import os
 os.system('pip install Pillow')
-from flask import Flask
-from threading import Thread
 import telebot
 from PIL import Image
 from telebot import types
 import os
 
-app = Flask('')
-
-@app.route('/')
-def home():
-    return "<b> mahos </b>"
-
-def run():
-    app.run(host='0.0.0.0', port=8080)
-
-def keep_alive():
-    t = Thread(target=run)
-    t.start()
 
 TOKEN = '6693769466:AAE_vS23ycMwKGA5ep2ModURkoF5PJAuYsY'
 bot = telebot.TeleBot(TOKEN)
@@ -100,5 +86,5 @@ def handle_document(message):
     else:
         bot.reply_to(message, "خطأ")
 
-keep_alive()
+
 bot.infinity_polling()
